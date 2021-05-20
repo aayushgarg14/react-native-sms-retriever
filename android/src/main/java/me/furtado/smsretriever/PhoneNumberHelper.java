@@ -102,7 +102,7 @@ final class PhoneNumberHelper {
 
     @NonNull
     private GoogleApiClient getGoogleApiClient(@NonNull final Context context, final Activity activity) {
-        if (mGoogleApiClient == null) {
+        if (mGoogleApiClient == null || !mGoogleApiClient.isConnected()) {
             GoogleApiClient.Builder builder = new GoogleApiClient.Builder(context);
             builder = builder.addConnectionCallbacks(mApiClientConnectionCallbacks);
             builder = builder.addApi(Auth.CREDENTIALS_API);
