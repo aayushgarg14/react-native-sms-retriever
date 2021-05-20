@@ -6,6 +6,7 @@ const EVEN_LISTENER = 'me.furtado.smsretriever:SmsEvent';
 const SmsRetrieverModule = (Platform.OS === "ios") ? null : {
   requestPhoneNumber: RNSmsRetrieverModule.requestPhoneNumber,
   startSmsRetriever: RNSmsRetrieverModule.startSmsRetriever,
+  getAppSignature: RNSmsRetrieverModule.getAppSignature,
   addSmsListener: (callback) => DeviceEventEmitter.addListener(EVEN_LISTENER, callback),
   removeSmsListener: () => DeviceEventEmitter.removeAllListeners(EVEN_LISTENER)
 };
